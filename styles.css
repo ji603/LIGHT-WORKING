@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* IN WHAT WE DO SECTION
+PASTE THIS IF YOU DONT WANT TO USE THE IMAGE
+linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
+
+*/
+
+.what-we-do {
+    width: 100%;
+    padding: 100px 0;
+    background: url('/Images/bg-work-sec-two.jpg') center/cover;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add spotlight container */
+.spotlight {
+    position: absolute;
+    width: 400px;  /* Increased size for the spotlight image */
+    height: 600px; /* Made taller to account for the cone shape */
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    background: url('/Images/spotlight.png') no-repeat center;
+    background-size: contain;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: screen; /* This will make the light blend better */
+}
+
+.what-we-do.has-spotlight .spotlight {
+    opacity: 0.8; /* Adjusted opacity for the image */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 20px;
+}
+
+.event-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.platform {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    z-index: 3;
+}
+
+.platform::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    bottom: -10px;
+    left: 0;
+    background: linear-gradient(90deg, #FFB800, #FF8A00);
+    border-radius: 50%;
+    transform: rotateX(60deg);
+    filter: blur(15px);
+    opacity: 0.6;
+}
+
+.object {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+}
+
+.trophy {
+    background-image: url('/Images/trophy-dark-1.png');
+}
+
+.guitar {
+    background-image: url('/Images/guitar-dark.png');
+}
+
+.corporate {
+    background-image: url('/Images/podium-dark.png');
+}
+
+.special {
+    background-image: url('/Images/decor-dark.png');
+}
+
+.event-card:hover .object {
+    transform: translateY(-20px) rotateY(10deg);
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.know-more {
+    color: #FFB800;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.know-more:hover {
+    color: #FF8A00;
+}
+
+/* Remove the existing spotlight effect since we'll control it via JavaScript */
+.what-we-do::before {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 36px;
+    }
+    
+    .subtitle {
+        font-size: 16px;
+    }
+}
