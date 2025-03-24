@@ -24,7 +24,7 @@ linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
 .what-we-do {
     width: 100%;
     padding: 100px 0;
-    background: url('/Images/bg-work-sec-two.jpg') center/cover;
+    background: url('Images/bg-work-sec-two.jpg') center/cover;
     position: relative;
     overflow: hidden;
 }
@@ -123,19 +123,19 @@ h1 {
 }
 
 .trophy {
-    background-image: url('/Images/trophy-dark-1.png');
+    background-image: url('Images/trophy-dark-1.png');
 }
 
 .guitar {
-    background-image: url('/Images/guitar-dark.png');
+    background-image: url('Images/guitar-dark.png');
 }
 
 .corporate {
-    background-image: url('/Images/podium-dark.png');
+    background-image: url('Images/podium-dark.png');
 }
 
 .special {
-    background-image: url('/Images/decor-dark.png');
+    background-image: url('Images/decor-dark.png');
 }
 
 .event-card:hover .object {
